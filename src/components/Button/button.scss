@@ -7,7 +7,6 @@ button {
   text-transform: uppercase;
   transform: scale(1);
   transition: all 200ms ease-in-out;
-  display: block;
 
   &--primary {
     background-color: var(--color-success);
