@@ -1,4 +1,6 @@
 import { FC } from 'react'
+import { AppContext } from '../../context/AppContext'
+import { AppContextType } from '../../@types/models'
 
 const Main: FC = () => {
   return (
