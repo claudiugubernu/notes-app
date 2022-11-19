@@ -5,6 +5,8 @@
 @import "./common/modal.scss";
 
 /* Components */
-
+@import '../components/Logo/logo.scss';
+@import '../components/Button/button.scss';
+@import '../components/Sidebar/sidebar.scss';
 
 @import "./app/app.scss";

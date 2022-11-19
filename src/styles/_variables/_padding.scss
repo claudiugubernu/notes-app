@@ -71,7 +71,7 @@
 
 @include sm-down() {
     @each $size in $padding {
-        .m-pt-#{$size} {
+        .m-pr-#{$size} {
             padding-right: $size + px;
         }
     } 
@@ -86,7 +86,7 @@
 
 @include sm-down() {
     @each $size in $padding {
-        .m-pt-#{$size} {
+        .m-pb-#{$size} {
             padding-bottom: $size + px;
         }
     } 
@@ -101,7 +101,7 @@
 
 @include sm-down() {
     @each $size in $padding {
-        .m-pt-#{$size} {
+        .m-pl-#{$size} {
             padding-left: $size + px;
         }
     } 
