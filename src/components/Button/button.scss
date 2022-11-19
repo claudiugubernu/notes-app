@@ -13,6 +13,11 @@ button {
     background-color: var(--color-success);
     border: 1px solid var(--color-success);
   }
+  
+  &--delete {
+    background-color: var(--color-danger);
+    border: 1px solid var(--color-danger);
+  }
 
   &:active {
     transform: scale(0.8);

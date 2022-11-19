@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import { ButtonProps } from './Button.types'
 
-const Button: FC<ButtonProps> = ({ label }) => {
+const Button: FC<ButtonProps> = ({ label, variant }) => {
   return (
-    <button className='button button--primary'>{label}</button>
+    <button className={`button ${variant}`}>{label}</button>
   )
 }
 
