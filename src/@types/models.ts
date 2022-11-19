@@ -12,4 +12,6 @@ export type AppContextType = {
   onAddNote: (note: Note) => void;
   onUpdateNote: (id: number, newNote: Omit<Note, 'id'>) => void;
   deleteNote: (id: number) => void;
+  activeNote: number;
+  setActiveNote: React.Dispatch<React.SetStateAction<number>>;
 };

@@ -1,0 +1,7 @@
+.note {
+  cursor: pointer;
+  
+  &.active {
+    background-color: var(--color-primary);
+  }
+}

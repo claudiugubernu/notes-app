@@ -8,20 +8,7 @@ interface AppContextProviderProps {
 export const AppContext = createContext<AppContextType | null>(null);
 
 const AppProvider: React.FC<AppContextProviderProps> = ({ children }) => {
-  const [notes, setNotes] = useState<Note[]>([
-    {
-      id: 1341341,
-      title: 'My note',
-      content: 'bla bla',
-      lastModified: 13413421
-    },
-    {
-      id: 1341342,
-      title: 'My note 2',
-      content: 'bla bla',
-      lastModified: 13413412
-    }
-  ])
+  const [notes, setNotes] = useState<Note[]>([])
   const [activeNote, setActiveNote] = useState<number>(0)
 
   const onAddNote = (note: Note) => {
@@ -53,7 +40,9 @@ const AppProvider: React.FC<AppContextProviderProps> = ({ children }) => {
       setNotes,
       onAddNote,
       onUpdateNote,
-      deleteNote
+      deleteNote,
+      activeNote,
+      setActiveNote
     }}>
       {children}
     </AppContext.Provider>
