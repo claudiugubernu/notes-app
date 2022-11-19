@@ -1,0 +1,55 @@
+:root {
+    --color-white: #fff;
+    --color-white-faded: rgb(255, 255, 255, 0.8);
+    --color-black: #000;
+    --color-light-grey: #f5f5f5;
+    --color-dark-grey: #a5a5a5;
+    --color-dark: #171f26;
+    
+    --color-danger: #DD3444;
+    --color-success: #28A745;
+    --color-select: #037BFE;
+    --color-warning: #FFC007;
+
+    --color-primary: #292929;
+    --color-primary-dark: #121212;
+    --color-primary-hover: #13572e;
+    --color-secondary: #E1E1E1;
+    --color-secondary-hover: #c9c9c9;
+}
+
+.c-white {
+    color: var(--color-white);
+}
+
+.c-light-grey {
+    color: var(--color-light-grey);
+}
+.bg-light {
+    background-color: var(--color-light-grey);
+}
+
+.c-danger {
+    color: var(--color-danger);
+}
+
+.bg-safe {
+    background-color: var(--color-select);
+}
+
+.bg-warning {
+    background-color: var(--color-warning);
+}
+
+.bg-danger {
+    background-color: var(--color-danger);
+}
+
+.c-success {
+    color: var(--color-success);
+}
+
+.bg-primary {
+background-color: var(--color-primary);
+}
+
