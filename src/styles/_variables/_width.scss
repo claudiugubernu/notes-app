@@ -5,6 +5,22 @@
     }
 }
 
+@include lg-down() {
+    @each $size in $width {
+        .lg-w-#{$size} {
+            width: $size + #{"%"};
+        }
+    }
+}
+
+@include md-down() {
+    @each $size in $width {
+        .md-w-#{$size} {
+            width: $size + #{"%"};
+        }
+    }
+}
+
 @include sm-down() {
     @each $size in $width {
         .m-w-#{$size} {

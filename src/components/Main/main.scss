@@ -1,0 +1,9 @@
+.main {
+  &--notes-preview {
+    border-top: 1px solid var(--color-primary-dark);
+  }
+  
+  textarea {
+    resize: none;
+  }
+}
