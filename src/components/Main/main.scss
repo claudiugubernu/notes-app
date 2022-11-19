@@ -6,4 +6,8 @@
   textarea {
     resize: none;
   }
+
+  @include sm-down() {
+    margin-top: 45px;
+  }
 }

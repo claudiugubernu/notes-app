@@ -11,6 +11,10 @@ const AppProvider: React.FC<AppContextProviderProps> = ({ children }) => {
   const [notes, setNotes] = useState<Note[]>([])
   const [activeNote, setActiveNote] = useState<number>(0)
 
+  const onGetNote = () => {
+
+  }
+
   const onAddNote = (note: Note) => {
     setNotes([...notes,
     {

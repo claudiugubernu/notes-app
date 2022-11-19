@@ -11,7 +11,7 @@ const Note: FC<NoteProps> = ({ note }) => {
     deleteNote(id);
   }
   return (
-    <li className={activeNote === note.id ? 'note active flex justify-between align-items-start mv-20 pv-10 ph-20' : 'note flex justify-between align-items-start mv-20 pv-10 ph-20'} onClick={() => { note.id && setActiveNote(note.id) }}>
+    <li className={`note flex justify-between align-items-start mv-20 pv-10 ph-20 ${activeNote === note.id && 'active'}`} onClick={() => { note.id && setActiveNote(note.id) }}>
       <div>
         <p className='note--title fs-24 c-secondary fw-bold m-0 mb-5'>{note.title}</p>
         <p className='note--preview m-0 mb-10 sm-hide-down'>{note.content && note.content.substring(0, 100) + '...'}</p>

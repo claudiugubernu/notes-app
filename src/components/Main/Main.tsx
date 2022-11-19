@@ -1,8 +1,9 @@
-import { FC } from 'react'
+import { FC, useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
 import { AppContextType } from '../../@types/models'
 
 const Main: FC = () => {
+  const { activeNote } = useContext(AppContext) as AppContextType;
   return (
     <section className='main w-70 lg-w-60 m-w-100'>
       <div className='main--notes-edit w-100 flex flex-column mv-20 ph-20'>
