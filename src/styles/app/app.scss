@@ -1,4 +1,8 @@
 .App {
     height: 100vh;
     overflow-y: scroll;
+
+    @include sm-down() {
+        height: 100%;
+    }
 }

@@ -31,7 +31,7 @@ const AppProvider: React.FC<AppContextProviderProps> = ({ children }) => {
     setActiveNote(note.id);
   }
 
-  const onUpdateNote = (newNote: Omit<Note, "id">) => {
+  const onUpdateNote = (newNote: Note) => {
     const updateNotes = notes.map((note) => {
       if (note.id === activeNote) {
         return newNote;

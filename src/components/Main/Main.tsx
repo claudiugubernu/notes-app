@@ -12,6 +12,7 @@ const Main: FC = () => {
     if (!activeNote) return
 
     onUpdateNote({
+      id: activeNote.id,
       title: value,
       content: activeNote.content,
       lastModified: Date.now(),
@@ -21,6 +22,7 @@ const Main: FC = () => {
   const onEditContent = (value: string) => {
     if (!activeNote) return
     onUpdateNote({
+      id: activeNote.id,
       title: activeNote.title,
       content: value,
       lastModified: Date.now(),
