@@ -1,5 +1,6 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { AppContextType, Note } from '../@types/models'
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 interface AppContextProviderProps {
   children: React.ReactNode;
@@ -8,11 +9,15 @@ interface AppContextProviderProps {
 export const AppContext = createContext<AppContextType | null>(null);
 
 const AppProvider: React.FC<AppContextProviderProps> = ({ children }) => {
-  const [notes, setNotes] = useState<Note[]>([])
+  const [notes, setNotes] = useLocalStorage<Note[]>('notes', [])
   const [activeNote, setActiveNote] = useState<number>(0)
 
-  const onGetNote = () => {
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
 
+  const onGetNote = () => {
+    return notes.find((note) => note.id === activeNote)
   }
 
   const onAddNote = (note: Note) => {
@@ -23,15 +28,17 @@ const AppProvider: React.FC<AppContextProviderProps> = ({ children }) => {
       content: note.content,
       lastModified: note.lastModified
     }])
+    setActiveNote(note.id);
   }
 
-  const onUpdateNote = (id: number, newNote: Omit<Note, "id">) => {
-    setNotes(notes.map(note => note.id === id ? {
-      ...note,
-      title: note.title,
-      content: note.content,
-      lastModified: Date.now()
-    } : note))
+  const onUpdateNote = (newNote: Omit<Note, "id">) => {
+    const updateNotes = notes.map((note) => {
+      if (note.id === activeNote) {
+        return newNote;
+      }
+      return note;
+    })
+    setNotes(updateNotes);
   }
 
   const deleteNote = (id: number) => {
@@ -42,6 +49,7 @@ const AppProvider: React.FC<AppContextProviderProps> = ({ children }) => {
     <AppContext.Provider value={{
       notes,
       setNotes,
+      onGetNote,
       onAddNote,
       onUpdateNote,
       deleteNote,

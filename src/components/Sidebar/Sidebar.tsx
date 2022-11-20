@@ -6,7 +6,7 @@ import { AppContext } from '../../context/AppContext'
 import { AppContextType } from '../../@types/models'
 
 const Sidebar: FC = () => {
-  const { onAddNote, activeNote, setActiveNote } = useContext(AppContext) as AppContextType;
+  const { onAddNote } = useContext(AppContext) as AppContextType;
 
   const onHandleAddNote = () => {
     onAddNote({

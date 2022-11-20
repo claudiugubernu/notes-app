@@ -1,4 +1,4 @@
-import React, { SetStateAction } from 'react';
+import React from 'react';
 export interface Note {
   id: number;
   title: string;
@@ -9,8 +9,9 @@ export interface Note {
 export type AppContextType = {
   notes: Note[];
   setNotes: React.Dispatch<React.SetStateAction<Note[]>>;
+  onGetNote: () => Note | undefined;
   onAddNote: (note: Note) => void;
-  onUpdateNote: (id: number, newNote: Omit<Note, 'id'>) => void;
+  onUpdateNote: (newNote: Omit<Note, 'id'>) => void;
   deleteNote: (id: number) => void;
   activeNote: number;
   setActiveNote: React.Dispatch<React.SetStateAction<number>>;
