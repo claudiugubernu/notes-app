@@ -34,11 +34,11 @@ const Main: FC = () => {
   return (
     <section className='main w-70 lg-w-60 m-w-100'>
       <div className='main--notes-edit w-100 flex flex-column mv-20 ph-20'>
-        <input type="text" className='mb-20' id="title" autoFocus defaultValue={activeNote?.title} onChange={(e) => onEditTitle(e.target.value)} />
+        <input type="text" className='mb-20' id="title" autoFocus value={activeNote?.title} onChange={(e) => onEditTitle(e.target.value)} />
         <small className='note--meta c-dark-grey mb-20'>
           Last modified {new Date(activeNote.lastModified).toLocaleDateString('en-GB', { hour: '2-digit', minute: '2-digit' })}
         </small>
-        <textarea id='body' rows={15} defaultValue={activeNote?.content} placeholder='Your note...' onChange={(e) => onEditContent(e.target.value)} />
+        <textarea id='body' rows={15} value={activeNote?.content} placeholder='Your note...' onChange={(e) => onEditContent(e.target.value)} />
       </div>
       <div className='main--notes-preview w-100 p-20'>
         <h1 className='fs-30 mb-20'>{activeNote?.title}</h1>
