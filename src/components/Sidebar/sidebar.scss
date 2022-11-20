@@ -6,7 +6,8 @@
   }
 
   @include sm-down() {
-
+    max-height: 300px;
+    
     &--header {
       position: fixed;
       top: 0;
