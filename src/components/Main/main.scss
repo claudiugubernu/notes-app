@@ -8,7 +8,9 @@
   }
 
   .markdown-preview {
-    overflow-x: scroll;
+    @include sm-down() {
+      overflow-x: scroll;
+    }
   }
 
   @include sm-down() {
