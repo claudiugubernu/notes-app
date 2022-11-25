@@ -1,9 +1,8 @@
 .markdown-preview {
-  p code, pre {
+  p code, 
+  pre {
     border: 1px solid var(--color-primary-dark);
     @include rs('padding', $ss, 30);
-    @include rs('margin-top', $ss, 30);
-    @include rs('margin-bottom', $ss, 30);
     display: inline-block;
     background-color: var(--color-primary-dark);
     border-radius: 5px;
