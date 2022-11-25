@@ -7,12 +7,6 @@
     resize: none;
   }
 
-  .markdown-preview {
-    @include sm-down() {
-      overflow-x: scroll;
-    }
-  }
-
   @include sm-down() {
     margin-top: 45px;
   }

@@ -4,8 +4,9 @@
     @include rs('padding', $ss, 30);
     @include rs('margin-top', $ss, 30);
     @include rs('margin-bottom', $ss, 30);
-    display: block;
+    display: inline-block;
     background-color: var(--color-primary-dark);
     border-radius: 5px;
+    white-space : pre-wrap;
   }
 }
