@@ -4,6 +4,10 @@
   p {
     margin: 0;
   }
+
+  pre {
+    @include rs('margin-bottom', $ss, 32);
+  }
   
   p code, 
   pre {
