@@ -1,4 +1,10 @@
 .markdown-preview {
+  white-space: pre-line;
+
+  p {
+    margin: 0;
+  }
+  
   p code, 
   pre {
     border: 1px solid var(--color-primary-dark);
