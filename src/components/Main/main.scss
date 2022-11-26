@@ -10,9 +10,25 @@
   @include sm-down() {
     margin-top: 45px;
   }
+
+  @include sm-up() {
+    margin-left: 40%;
+  }
+
+  @include lg-up() {
+    margin-left: 30%;
+  }
 }
 
 .no-active-notes {
   height: 100vh;
   color: var( --color-secondary-hover);
+
+  @include sm-up() {
+    margin-left: 40%;
+  }
+
+  @include lg-up() {
+    margin-left: 30%;
+  }
 }

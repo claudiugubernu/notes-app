@@ -3,6 +3,10 @@
 
   @include sm-up() {
     border-right: 1px solid var(--color-primary-dark);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
   }
 
   @include sm-down() {
