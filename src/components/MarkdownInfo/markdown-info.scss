@@ -1,0 +1,39 @@
+.markdown-info {
+  position: absolute;
+  top: 100px; 
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease-in-out;
+
+  .markdown-modal {
+    width: 100%;
+    @include rs('max-width', $ss, 500);
+    background-color: var(--color-primary-dark);
+    padding: 30px;
+
+    .modal-header {
+      .close-modal {
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+
+    p {
+      margin-top: 0;
+      @include rs('margin-bottom',$ss, 16);
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+}

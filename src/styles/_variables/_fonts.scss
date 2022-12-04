@@ -34,6 +34,10 @@ p {
     text-transform: capitalize;
 }
 
+.td-underline {
+    text-decoration: underline;
+}
+
 .fw-bold {
     font-weight: 700;
 }
@@ -51,6 +55,14 @@ p {
 
     @include sm-up() {
         @include rs('font-size', $fs, 16);
+    }
+}
+
+.fs-20 {
+    font-size: 18px;
+
+    @include sm-up() {
+        @include rs('font-size', $fs, 20);
     }
 }
 
