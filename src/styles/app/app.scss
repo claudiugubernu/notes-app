@@ -1,8 +1,69 @@
+@mixin afterBg {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+}
+
 .App {
     height: 100vh;
     overflow-y: scroll;
 
     @include sm-down() {
         height: 100%;
+    }
+
+    .info-btn {
+        background-color: #bfb00f;
+        color: var(--color-primary);
+        height: 30px;
+        width: 30px;
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        opacity: 0.3;
+        transition: all 250ms ease-in;
+
+        span {
+            border: 1px solid var(--color-primary);
+            padding: 0px 7px;
+            border-radius: 50%;
+            font-size: 12px;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    
+        &:after {
+            @include afterBg;
+            animation: shockwave 3000ms 650ms ease-out infinite;
+        }
+        
+        &:before {
+            @include afterBg;
+            animation: shockwave 3000ms 500ms ease-out infinite;
+        }
+    }
+}
+  
+@keyframes shockwave {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 2px rgba(255, 234, 0, 0.5), inset 0 0 1px rgba(255, 234, 0, 0.2);
+    }
+    95% {
+        box-shadow: 0 0 50px rgba(255, 255, 255, 0), inset 0 0 30px rgba(0,0,0,0);
+    }
+    100% {
+        transform: scale(2.25);
     }
 }

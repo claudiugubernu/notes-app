@@ -12,9 +12,10 @@ function App() {
 
   return (
     <div className="App flex m-flex-column">
-      <Sidebar onToggleModal={onToggleModal} />
+      <Sidebar />
       <Main />
       <MarkdownInfo onToggleModal={onToggleModal} toggleModal={toggleModal} />
+      <div className='m-0 info-btn' onClick={onToggleModal}><span>i</span></div>
     </div>
   );
 }
