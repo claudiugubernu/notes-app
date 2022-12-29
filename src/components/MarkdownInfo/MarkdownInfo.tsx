@@ -8,7 +8,7 @@ interface Props {
 const MarkdownInfo = ({ onToggleModal, toggleModal }: Props) => {
   return (
     <div className={toggleModal ? 'active markdown-info' : 'markdown-info'}>
-      <div className='markdown-blur-layer'></div>
+      <div className='markdown-blur-layer' onClick={onToggleModal}></div>
       <div className="markdown-modal">
         <div className="modal-header flex justify-between align-items-center">
           <p className='ff-1 fs-30'>Markdown Syntax</p>
