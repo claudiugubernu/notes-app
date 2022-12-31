@@ -50,6 +50,14 @@ p {
     font-weight: 300;
 }
 
+.fs-14 {
+    font-size: 14px;
+
+    @include sm-up() {
+        @include rs('font-size', $fs, 14);
+    }
+}
+
 .fs-16 {
     font-size: 16px;
 
