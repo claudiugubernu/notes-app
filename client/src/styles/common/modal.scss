@@ -11,7 +11,7 @@
     width: 100%;
     max-width: 350px;
     padding: 15px 25px;
-    background-color: var(--color-white);
+    background-color: var(--color-black);
     z-index: 50;
 
     &.show {
@@ -47,11 +47,5 @@
     &.active {
         opacity: 1;
         visibility: visible;
-    }
-}
-
-#dark-theme {
-    .modal {
-        background-color: var(--color-dark);
     }
 }

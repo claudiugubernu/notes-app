@@ -1,12 +1,17 @@
 import Button from "../Button/Button"
 import userImg from '../../assets/icons/user-icon.svg'
 
-const Navbar = () => {
+interface Props {
+  onShowUserModal: () => void;
+}
+
+const Navbar = ({ onShowUserModal }: Props) => {
   return (
     <section className="navbar m-m-0 m-p-0 site-width">
       <Button
         label={'Login'}
         variant={'button--link '}
+        onClick={onShowUserModal}
       />
       <div className="">
         <p className="fs-14 m-0">Hi, username</p>
