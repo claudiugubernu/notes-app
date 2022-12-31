@@ -11,6 +11,7 @@ export const AppContext = createContext<AppContextType | null>(null);
 const AppProvider: React.FC<AppContextProviderProps> = ({ children }) => {
   const [notes, setNotes] = useLocalStorage<Note[]>('notes', [])
   const [activeNote, setActiveNote] = useState<number>(0)
+  const [loggedIn, setLoggedIn] = useState<boolean>(false)
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
@@ -54,7 +55,8 @@ const AppProvider: React.FC<AppContextProviderProps> = ({ children }) => {
       onUpdateNote,
       deleteNote,
       activeNote,
-      setActiveNote
+      setActiveNote,
+      loggedIn
     }}>
       {children}
     </AppContext.Provider>

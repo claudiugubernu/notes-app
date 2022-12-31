@@ -15,4 +15,5 @@ export type AppContextType = {
   deleteNote: (id: number) => void;
   activeNote: number;
   setActiveNote: React.Dispatch<React.SetStateAction<number>>;
+  loggedIn: boolean;
 };
