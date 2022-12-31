@@ -17,8 +17,8 @@ function App() {
     setShowUserModal((prev) => !prev);
   }
 
-  const onToggleUserModal = () => {
-    setToggleUserModal('register')
+  const onToggleUserModal = (mode: string) => {
+    setToggleUserModal(mode);
   }
 
   return (
@@ -27,7 +27,7 @@ function App() {
       <Main />
       <MarkdownInfo onToggleModal={onToggleModal} toggleModal={toggleModal} />
       <div className='m-0 info-btn' onClick={onToggleModal}><span>i</span></div>
-      <Modal showUserModal={showUserModal} toggleUserModal={toggleUserModal} onToggleUserModal={onToggleUserModal} />
+      <Modal showUserModal={showUserModal} onShowUserModal={onShowUserModal} toggleUserModal={toggleUserModal} onToggleUserModal={onToggleUserModal} />
     </div>
   );
 }

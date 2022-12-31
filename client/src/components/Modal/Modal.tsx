@@ -4,17 +4,23 @@ import RegisterModal from '../RegisterModal/RegisterModal'
 interface Props {
   showUserModal: boolean;
   toggleUserModal: string;
-  onToggleUserModal: () => void;
+  onToggleUserModal: (mode: string) => void;
+  onShowUserModal: () => void;
 }
 
-const Modal = ({ showUserModal, toggleUserModal, onToggleUserModal }: Props) => {
+const Modal = ({ showUserModal, onShowUserModal, toggleUserModal, onToggleUserModal }: Props) => {
   return (
-    <div className={showUserModal ? 'modal show' : 'modal'}>
+    <div className={showUserModal ? 'modal active' : 'modal'}>
+      <div className='modal--blur-layer' onClick={onShowUserModal}></div>
       {
         toggleUserModal === 'login' ? (
-          <LoginModal />
+          <div className="modal--inner">
+            <LoginModal onToggleUserModal={onToggleUserModal} />
+          </div>
         ) : (
-          <RegisterModal />
+          <div className="modal--inner">
+            <RegisterModal onToggleUserModal={onToggleUserModal} />
+          </div>
         )
       }
     </div>

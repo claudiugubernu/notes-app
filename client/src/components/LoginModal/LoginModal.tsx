@@ -1,6 +1,10 @@
 import Button from "../Button/Button"
 
-const LoginModal = () => {
+interface Props {
+  onToggleUserModal: (mode: string) => void;
+}
+
+const LoginModal = ({ onToggleUserModal }: Props) => {
   return (
     <div className="login-modal">
       <p className="modal--title fs-30 text-center m-0">LOGIN</p>
@@ -9,6 +13,7 @@ const LoginModal = () => {
         <Button
           label={'Register now'}
           variant={'button--link fs-12'}
+          onClick={() => onToggleUserModal('register')}
         />
       </div>
     </div>
