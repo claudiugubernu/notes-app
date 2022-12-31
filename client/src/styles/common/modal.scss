@@ -36,10 +36,9 @@
           user-select: none;
         }
       }
-  
-      p {
-        margin-top: 0;
-        @include rs('margin-bottom',$ss, 16);
+
+      .modal-footer {
+        margin-top: 20px;
       }
     }
   
