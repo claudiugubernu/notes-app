@@ -1,14 +1,7 @@
-import express from "express";
-import mysql from "mysql2";
+import express from "express"
+import { getNote, getNotes } from "./database.js";
 
 const app = express();
-
-const db = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: 'KlausDev23!',
-  database: 'notes_app'
-})
 
 const port = 8000;
 
@@ -23,25 +16,15 @@ app.get("/", (req, res) => {
   res.json({ message: "ok" });
 });
 
-app.get("/notes", (req, res) => {
-  const query = "SELECT * FROM notes";
-  db.query(query, (err, data) => {
-    if(err) return res.json(err)
-    return res.json(data);
-  })
+app.get("/notes", async (req, res) => {
+  const notes = await getNotes()
+  res.send(notes)
 })
 
-app.post("/notes", (req, res) => {
-  const query = "INSERT INTO notes ( `title`, `date`, `content`) VALUES (?)"
-  const values = [
-    req.body.title, 
-    new Date(),
-    req.body.content
-  ]
-  db.query(query,[values], (err, data) => {
-    if(err) return res.json(err)
-    return res.json("Note added");
-  })
+app.get("/notes/:id", async (req, res) => {
+  const id = req.params.id
+  const notes = await getNote(id)
+  res.send(notes)
 })
 
 app.listen(port, () => {
