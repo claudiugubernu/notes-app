@@ -1,4 +1,12 @@
 import React from 'react';
+
+export interface User {
+  id: number;
+  username: string;
+  email: string;
+  password: string;
+}
+
 export interface Note {
   id: number;
   title: string;

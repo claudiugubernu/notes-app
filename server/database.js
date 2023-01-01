@@ -50,16 +50,3 @@ export const updateNote = async (title, content, updatedDate, id) => {
   `, [title, content, updatedDate, id ])
   return getNote(id);
 }
-
-// const result = await createNote('test', 'test', date)
-// console.log(result);
-
-// const updatedDate = new Date();
-// const updateNotes = await updateNote('updated test title', 'updated test content', updatedDate, 4);
-// console.log(updateNotes);
-
-// const deleteSingleNote = await deleteNote(4)
-// console.log(deleteSingleNote)
-
-// const notes = await getNotes()
-// console.log(notes)
