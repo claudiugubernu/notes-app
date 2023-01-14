@@ -50,3 +50,12 @@ export const updateNote = async (title, content, updatedDate, id) => {
   `, [title, content, updatedDate, id ])
   return getNote(id);
 }
+
+export const getUser = async(userId) => {
+  const [rows] = await pool.query(`
+  SELECT * 
+  FROM users
+  WHERE id = ?
+  `, [userId])
+  return rows[0];
+}
